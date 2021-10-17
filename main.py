@@ -76,7 +76,9 @@ def H_segment(img, train_gt, params, gt):
             current_segment = felzenszwalb(img, scale=1.0, sigma=0.95, min_size=idd)
             if len(idy) > 0:
                 if np.sum(current_segment - idy[-1]) != 0:
-                    print(idd, np.sum(current_segment - idy[-1]), len(idy))
+                    
+                    
+                    (idd, np.sum(current_segment - idy[-1]), len(idy))
                     idy.append(current_segment)
             else:
                 idy.append(current_segment)
@@ -522,7 +524,7 @@ def main(params):
 def parse_args():
     parser = argparse.ArgumentParser(description='Low shot benchmark')
     parser.add_argument('--DHCN_LAYERS', default=1, type=int)
-    parser.add_argument('--SAMPLE_PERCENTAGE', default=5, type=int)
+    parser.add_argument('--SAMPLE_PERCENTAGE', default=10, type=int)
     parser.add_argument('--DATASET', default="PaviaU", type=str)  # KSC, PaviaU, IndianPines, Botswana,    !!PaviaC
     parser.add_argument('--CONV_SIZE', default=3, type=int)  # 3,5,7
     parser.add_argument('--ROT', default=True, type=bool)  # False
