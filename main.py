@@ -523,7 +523,7 @@ def main(params):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Low shot benchmark')
-    parser.add_argument('--DHCN_LAYERS', default=1, type=int)
+    parser.add_argument('--DHCN_LAYERS', default=3, type=int)
     parser.add_argument('--SAMPLE_PERCENTAGE', default=10, type=int)
     parser.add_argument('--DATASET', default="PaviaU", type=str)  # KSC, PaviaU, IndianPines, Botswana,    !!PaviaC
     parser.add_argument('--CONV_SIZE', default=3, type=int)  # 3,5,7
